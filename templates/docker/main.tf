@@ -31,7 +31,7 @@ variable "docker_image" {
   # List of images available for the user to choose from.
   # Delete this condition to give users free text input.
   validation {
-    condition     = contains(["base", "java", "nvm"], var.docker_image)
+    condition     = contains(["base", "java", "nvm", "rust"], var.docker_image)
     error_message = "Invalid Docker image!"
   }
 
@@ -116,7 +116,7 @@ resource "docker_image" "coder_image" {
   build {
     path       = "./images/"
     dockerfile = "${var.docker_image}.Dockerfile"
-    tag        = ["coder-${var.docker_image}:v0.2.2"]
+    tag        = ["coder-${var.docker_image}:v0.2.4"]
   }
 
   # Keep alive for other workspaces to use upon deletion
