@@ -9,6 +9,9 @@ RUN mkdir -p $NVM_DIR
 
 # Installing nvm with no node version
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+# Install current lts
+RUN nvm install --lts
+# Give ownership to the user
 RUN chown -R coder:coder $NVM_DIR
 
 USER coder
