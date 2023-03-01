@@ -13,9 +13,10 @@ ENV PATH=/usr/local/cargo/bin:$PATH
 RUN curl -o /tmp/rustup.sh -sSf https://sh.rustup.rs && \
     chmod +x /tmp/rustup.sh
 RUN /tmp/rustup.sh -y \
-                   --no-modify-path \
-                   --profile minimal \
-                   --default-toolchain stable && \
+    --no-modify-path \
+    --profile minimal \
+    --default-toolchain stable \
+    --components rustfmt,clippy && \
     rm -f /tmp/rustup.sh && \
     chmod -R a+w ${RUSTUP_HOME} ${CARGO_HOME}
 
