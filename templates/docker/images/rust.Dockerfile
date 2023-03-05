@@ -15,8 +15,7 @@ RUN curl -o /tmp/rustup.sh -sSf https://sh.rustup.rs && \
 RUN /tmp/rustup.sh -y \
     --no-modify-path \
     --profile minimal \
-    --default-toolchain stable \
-    --components rustfmt,clippy && \
+    --default-toolchain stable && \
     rm -f /tmp/rustup.sh && \
     chmod -R a+w ${RUSTUP_HOME} ${CARGO_HOME}
 
