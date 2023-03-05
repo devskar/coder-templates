@@ -30,4 +30,7 @@ RUN useradd coder \
     --user-group && \
     echo "coder ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers.d/nopasswd
 
+# install code server
+# RUN curl -fsSL https://code-server.dev/install.sh | sh
+
 USER coder

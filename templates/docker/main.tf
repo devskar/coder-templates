@@ -52,6 +52,9 @@ resource "coder_agent" "main" {
     set -e
     sudo cp /root/.bashrc /home/coder/.bashrc
     source /home/coder/.bashrc
+    if [ -f /home/coder/personalize ]; then 
+      /home/coder/personalize
+    fi
   EOT
 
   # These environment variables allow you to make Git commits right away after creating a
