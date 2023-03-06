@@ -14,7 +14,7 @@ RUN curl -o /tmp/rustup.sh -sSf https://sh.rustup.rs && \
     chmod +x /tmp/rustup.sh
 RUN /tmp/rustup.sh -y \
     --no-modify-path \
-    --profile minimal \
+    --profile default \
     --default-toolchain stable && \
     rm -f /tmp/rustup.sh && \
     chmod -R a+w ${RUSTUP_HOME} ${CARGO_HOME}
